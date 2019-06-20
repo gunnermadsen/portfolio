@@ -1,0 +1,19 @@
+.project-card {
+  max-width: 300px;
+  height: 525px;
+}
+
+/* below css reference from https://stackoverflow.com/questions/50081370/how-to-place-mat-card-mat-card-action-at-bottom-of-card-when-we-are-creating-car */
+.mat-card {
+  display:flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}

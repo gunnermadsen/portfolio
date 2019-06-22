@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   public projects: any[];
   public url: string;
   constructor() {
-    this.url = (isDevMode()) ? 'http://localhost:4200' : 'https://gunner-madsen.com';
+    this.url = isDevMode() ? 'http://localhost:4200' : 'https://www.gunner-madsen.com';
   }
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
         description: 'An app for determining basic transportation costs for delivery drivers',
         url: '',
         image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
-      },
+      }
     ]
 
   }

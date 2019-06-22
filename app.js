@@ -13,7 +13,6 @@ app.use(function(req, res, next) {
     if (!req.secure) {
         const secureUrl = `https://${req.headers['host']}${req.url}`;
         res.writeHead(301, { "Location": secureUrl })
-        //return res.redirect(['https://', req.get('Host'), req.url].join(''));
         res.end();
     }
     next();

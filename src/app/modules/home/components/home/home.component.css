@@ -1,6 +1,16 @@
-.project-card {
-  max-width: 300px;
-  height: 525px;
+
+
+@media only screen and (max-width: 574px) {
+  .project-card {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+  .project-card {
+    max-width: 300px;
+    height: 525px;
+  }
 }
 
 /* below css reference from https://stackoverflow.com/questions/50081370/how-to-place-mat-card-mat-card-action-at-bottom-of-card-when-we-are-creating-car */

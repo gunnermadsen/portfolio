@@ -25,13 +25,13 @@ export class HomeComponent implements OnInit {
         name: 'CoolShare',
         description: 'A clone of the well-known dropbox file sharing application.',
         url: '',
-        image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+        image: 'https://via.placeholder.com/210x150'
       },
       {
         name: 'Cafe Finder',
         description: 'An app for finding coffee shops enroute to a destination.',
         url: '',
-        image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+        image: 'https://via.placeholder.com/210x150'
       },
       {
         name: 'KeyFocus',
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
         name: 'Moving Calculator',
         description: 'An app for determining basic transportation costs for delivery drivers',
         url: '',
-        image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+        image: 'https://via.placeholder.com/210x150'
       }
     ]
 

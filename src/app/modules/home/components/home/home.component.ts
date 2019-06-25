@@ -18,13 +18,13 @@ export class HomeComponent implements OnInit {
       {
         name: 'Mindful Meals',
         description: 'Mindful Meals facilitates tracking grocery items in your pantry, suggests recipes for pantry items, and helps to reduce the amount of food you consume.',
-        url: '',
+        url: 'https://mindfulmeals.herokuapp.com',
         image: `${this.url}/assets/mindful-meals_background.png`
       },
       {
         name: 'CoolShare',
         description: 'A clone of the well-known dropbox file sharing application.',
-        url: '',
+        url: 'https://coolshare.herokuapp.com',
         image: 'https://via.placeholder.com/210x150'
       },
       {
@@ -47,6 +47,10 @@ export class HomeComponent implements OnInit {
       }
     ]
 
+  }
+
+  public routeToExternalSite(url: string): void {
+    window.open(url, "_blank");
   }
 
 }

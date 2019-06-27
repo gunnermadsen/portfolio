@@ -8,7 +8,7 @@
             "name": "Client",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:4200",
+            "url": "http://localhost:8080",
             "port": 9222,
             "webRoot": "${workspaceFolder}",
             "skipFiles": [
@@ -17,6 +17,18 @@
                 "${workspaceRoot}/node_modules/**/*.js",
                 "<node_internals>/**/*.js"
             ],
+        },
+        {
+            "name": "Portfolio Web Server",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "protocol": "inspector",
+            "processId": "${command:PickProcess}",
+            "skipFiles": [
+                "${workspaceRoot}/node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ]
         },
     ]
 }

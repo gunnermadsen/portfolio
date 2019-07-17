@@ -7,6 +7,7 @@ import { Component, OnInit, isDevMode } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public projects: any[];
+  public hovering: boolean[] = [];
   public url: string;
   constructor() {
     this.url = isDevMode() ? 'http://localhost:4200' : 'https://www.gunner-madsen.com';
@@ -22,9 +23,9 @@ export class HomeComponent implements OnInit {
         image: `${this.url}/assets/mindful-meals_background.png`
       },
       {
-        name: 'CoolShare',
-        description: 'A clone of the well-known dropbox file sharing application.',
-        url: 'https://coolshare.herokuapp.com',
+        name: 'Shareily',
+        description: 'A clone of Dropbox, the well-known file sharing application.',
+        url: 'https://shareily.com',
         image: 'https://via.placeholder.com/210x150'
       },
       {

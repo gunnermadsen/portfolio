@@ -1,4 +1,6 @@
-
+.project-card {
+  position: relative;
+}
 
 @media only screen and (max-width: 574px) {
   .project-card {

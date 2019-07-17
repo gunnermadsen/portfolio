@@ -23,11 +23,11 @@
   </mat-sidenav>
 
   <mat-toolbar color="primary">
-    <div class="container-fluid px-0">
-      <button type="button" mat-button class="px-0" (click)="sidenav.toggle()">
-        <mat-icon [inline]="true">menu</mat-icon>
+    <div class="navbar-center">
+      <button type="button" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
-      <button mat-button type="button" class="px-0" routerLink="/projects">
+      <button mat-button type="button" routerLink="/projects">
         <h4>Gunner Madsen</h4>
       </button>
     </div>

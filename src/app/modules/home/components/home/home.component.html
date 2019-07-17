@@ -1,7 +1,11 @@
 <div class="container-fluid">
   <div class="row mt-4">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" *ngFor="let project of projects">
-      <mat-card class="project-card mat-elevation-z6">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" *ngFor="let project of projects; index as i">
+      <mat-card class="project-card" 
+        [class.mat-elevation-z12]="hovering[i]" 
+        [class.mat-elevation-z3]="!hovering[i]" 
+        (mouseover)="hovering[i] = true" 
+        (mouseout)="hovering[i] = false">
         <mat-card-header>
           <!-- <div mat-card-avatar class="project-card-header-image"></div> -->
           <mat-card-title>{{ project.name }}</mat-card-title>

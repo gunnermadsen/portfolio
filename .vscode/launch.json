@@ -5,12 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Client",
+            "name": "Portfolio Client",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:8080",
-            "port": 9222,
+            "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}",
+            "sourceMapPathOverrides": {
+                "webpack:/*": "${webRoot}/*",
+                "/./*": "${webRoot}/*",
+                "/src/*": "${webRoot}/*",
+                "/*": "*",
+                "/./~/*": "${webRoot}/node_modules/*"
+            },
             "skipFiles": [
                 "${workspaceRoot}/dist",
                 "${workspaceRoot}/src/environments",

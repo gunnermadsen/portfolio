@@ -12,7 +12,7 @@ app.get('/*', function (req, res) {
 app.use(function(req, res, next) {
     if (!req.secure) {
         // const secureUrl = `https://${req.headers['host']}${req.url}`;
-        const secureUrl = `https://gunner-madsen.com`;
+        const secureUrl = `https://www.gunner-madsen.com`;
         res.redirect(secureUrl);
         // res.end();
     }

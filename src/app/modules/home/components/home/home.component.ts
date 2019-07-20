@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       {
         name: 'Shareily',
         description: 'A clone of Dropbox, the well-known file sharing application.',
-        url: 'https://shareily.com',
+        url: 'https://www.shareily.com',
         image: 'https://via.placeholder.com/210x150'
       },
       // {

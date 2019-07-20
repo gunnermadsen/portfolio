@@ -11,9 +11,8 @@ app.get('/*', function (req, res) {
 
 app.use(function(req, res, next) {
     if (!req.secure) {
-        const secureUrl = `https://${req.headers['host']}${req.url}`;
-        console.log(secureUrl);
-        // res.writeHead(301, { "Location": secureUrl })
+        // const secureUrl = `https://${req.headers['host']}${req.url}`;
+        const secureUrl = `https://gunner-madsen.com`;
         res.redirect(secureUrl);
         // res.end();
     }

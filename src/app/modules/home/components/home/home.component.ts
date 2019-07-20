@@ -28,24 +28,24 @@ export class HomeComponent implements OnInit {
         url: 'https://shareily.com',
         image: 'https://via.placeholder.com/210x150'
       },
-      {
-        name: 'Cafe Finder',
-        description: 'An app for finding coffee shops enroute to a destination.',
-        url: '',
-        image: 'https://via.placeholder.com/210x150'
-      },
+      // {
+      //   name: 'Cafe Finder',
+      //   description: 'An app for finding coffee shops enroute to a destination.',
+      //   url: '',
+      //   image: 'https://via.placeholder.com/210x150'
+      // },
       {
         name: 'KeyFocus',
         description: 'Keyfocus is a productivity tool for managing communications with others. Its streamlined workflow expedites the meeting creation process, and its intuitive user interface facilities fast correspondance.',
-        url: '',
+        url: 'https://dev01.keyfocus.io',
         image: `${this.url}/assets/keyfocus-background.jpg`
       },
-      {
-        name: 'Moving Calculator',
-        description: 'An app for determining basic transportation costs for delivery drivers',
-        url: '',
-        image: 'https://via.placeholder.com/210x150'
-      }
+      // {
+      //   name: 'Moving Calculator',
+      //   description: 'An app for determining basic transportation costs for delivery drivers',
+      //   url: '',
+      //   image: 'https://via.placeholder.com/210x150'
+      // }
     ]
 
   }

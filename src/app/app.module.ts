@@ -14,7 +14,7 @@ import { MaterialModule } from './material.module';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule

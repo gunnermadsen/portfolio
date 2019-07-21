@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
         name: 'Mindful Meals',
         description: 'Mindful Meals facilitates tracking grocery items in your pantry, suggests recipes for pantry items, and helps to reduce the amount of food you consume.',
         url: 'https://mindfulmeals.herokuapp.com',
-        image: `${this.url}/assets/mindful-meals_background.png`
+        image: `${this.url}/assets/mindful-meals_background.jpg`
       },
       {
         name: 'Shareily',

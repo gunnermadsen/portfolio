@@ -20,11 +20,21 @@ import 'zone.js/dist/zone-node';
 import * as express from 'express';
 import {join} from 'path';
 import * as compression from 'compression'
+import { NextFunction, Request, Response } from 'express';
 
 // Express server
 const app = express();
 
 app.use(compression());
+
+app.use( function forceLiveDomain(request: Request, response: Response, next: NextFunction) {
+  let host = request.get('Host');
+
+  if (host === 'gunner-madsen.com' || host === 'www.gunner-madsen.com' || host === 'gunner-madsen-portfolio.herokuapp.com') {
+    return response.redirect(301, 'https://gunner-madsen.com/projects');
+  }
+  return next();
+})
 
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');

@@ -31,7 +31,7 @@ app.use( function forceLiveDomain(request: Request, response: Response, next: Ne
   let host = request.get('Host');
 
   if (host === 'gunner-madsen.com' || host === 'www.gunner-madsen.com' || host === 'gunner-madsen-portfolio.herokuapp.com') {
-    return response.redirect(301, 'https://gunner-madsen.com/projects');
+    return response.redirect(301, 'https://www.gunner-madsen.com/projects');
   }
   return next();
 })

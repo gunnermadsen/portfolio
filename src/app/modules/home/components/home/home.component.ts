@@ -16,9 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
-
     this.projects = projects;
-
   }
 
   public routeToExternalSite(url: string): void {

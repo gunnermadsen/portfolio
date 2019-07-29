@@ -41,11 +41,11 @@ app.engine('html', ngExpressEngine({
   ]
 }));
 
-app.use((request: Request, response: Response) => {
-  if (!request.secure) {
-    response.redirect(`https://gunner-madsen.com`);
-  }
-})
+// app.use((request: Request, response: Response) => {
+//   if (!request.secure) {
+//     response.redirect(`https://gunner-madsen.com`);
+//   }
+// })
 
 app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);

@@ -43,7 +43,7 @@ app.engine('html', ngExpressEngine({
 
 app.use((request: Request, response: Response) => {
   if (!request.secure) {
-    response.redirect(`https://${request.headers.host}${request.url}`);
+    response.redirect(`https://gunner-madsen.com`);
   }
 })
 

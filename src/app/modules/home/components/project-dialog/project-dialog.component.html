@@ -1,0 +1,49 @@
+<div class="container-fluid px-0">
+    <div class="row">
+        <div class="col">
+            <h2>{{ project.name }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-divider></mat-divider>
+        </div>
+    </div>
+    <div class="row mb-2 mt-3">
+        <div class="col">
+            {{ project.description }}
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+            <h3>Front End Technologies</h3>
+            <mat-chip-list>
+                <mat-chip color="accent" selected *ngFor="let technology of project.technologies.FrontEnd">
+                    {{ technology }}
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+            <h3>Back End Technologies</h3>
+            <mat-chip-list>
+                <mat-chip color="primary" selected *ngFor="let technology of project.technologies.BackEnd">
+                    {{ technology }}
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <mat-divider></mat-divider>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-auto ml-auto">
+            
+            <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)">Live Site</button>
+            <button mat-raised-button class="ml-2" *ngIf="project.githubUrl != null" (click)="routeToExternalSite(project.githubUrl)">Github</button>
+        </div>
+    </div>
+</div>

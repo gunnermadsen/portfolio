@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid px-0">
   <div class="row mt-4">
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 mb-4" *ngFor="let project of projects; index as i">
       <mat-card class="project-card" 
@@ -7,22 +7,26 @@
         (mouseover)="hovering[i] = true" 
         (mouseout)="hovering[i] = false">
         <div class="row">
-          <div class="col-10">
+          <div class="col-10 pr-0">
             <h3>{{ project.name }}</h3>
             <p>Web application</p>
           </div>
-          <div class="col-2 pl-0">
-            <button mat-icon-button color="primary">
+          <div class="col-auto ml-auto px-0">
+            <button mat-icon-button color="primary" (click)="openProjectDialog(i)">
               <mat-icon>information</mat-icon>
             </button>
           </div>
         </div>
-        <img mat-card-image class="img-fluid" [src]="project.image">
-        <mat-card-content class="card-content mb-0">
+        <img mat-card-image [src]="project.image">
+        <!-- <mat-card-content class="card-content mb-0">
           <p>
             {{ project.description }}
           </p>
-        </mat-card-content>
+        </mat-card-content> -->
+        <mat-card-actions class="project-card-actions">
+          <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)">Live Site</button>
+          <button mat-raised-button color="accent" *ngIf="project.githubUrl != null" (click)="routeToExternalSite(project.githubUrl)">Github</button>
+        </mat-card-actions>
       </mat-card>      
     </div>
   </div>

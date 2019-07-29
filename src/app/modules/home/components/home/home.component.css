@@ -1,7 +1,16 @@
+
+
+.mat-card {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .project-card {
   position: relative;
 }
 
+/* 
 @media only screen and (max-width: 575px) {
   .project-card {
     max-width: 100%;
@@ -12,7 +21,7 @@
 @media only screen and (max-width: 768px) {
   .project-card {
     max-width: 100%;
-    height: 500px;
+    height: 500px; 
   }
 }
 
@@ -23,13 +32,6 @@
   }
 }
 
-/* below css reference from https://stackoverflow.com/questions/50081370/how-to-place-mat-card-mat-card-action-at-bottom-of-card-when-we-are-creating-car */
-.mat-card {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .mat-card-header {
   flex-shrink: 0;
 }
@@ -37,4 +39,42 @@
 .mat-card-content {
   flex-grow: 1;
   overflow: auto;
+
+
+} */
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .project-card {
+    max-width: 100%;
+    height: 475px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .project-card {
+    max-width: 100%;
+    height: 500px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .project-card {
+    max-width: 100%;
+    height: 500px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .project-card {
+    max-width: 100%;
+    height: 550px;
+  }
 }

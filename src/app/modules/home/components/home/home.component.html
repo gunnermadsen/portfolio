@@ -6,22 +6,24 @@
         [class.mat-elevation-z3]="!hovering[i]" 
         (mouseover)="hovering[i] = true" 
         (mouseout)="hovering[i] = false">
-        <mat-card-header>
-          <!-- <div mat-card-avatar class="project-card-header-image"></div> -->
-          <mat-card-title>{{ project.name }}</mat-card-title>
-          <mat-card-subtitle>Web App</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="project.image">
+        <div class="row">
+          <div class="col-10">
+            <h3>{{ project.name }}</h3>
+            <p>Web application</p>
+          </div>
+          <div class="col-2 pl-0">
+            <button mat-icon-button color="primary">
+              <mat-icon>information</mat-icon>
+            </button>
+          </div>
+        </div>
+        <img mat-card-image class="img-fluid" [src]="project.image">
         <mat-card-content class="card-content mb-0">
           <p>
             {{ project.description }}
           </p>
         </mat-card-content>
-        <mat-card-actions class="card-actions">
-          <button mat-raised-button color="accent" (click)="routeToExternalSite(project.url)">Live</button>
-          <!-- <button *ngIf="project.name != 'KeyFocus'" mat-raised-button color="primary">StackBlitz</button> -->
-        </mat-card-actions>
-      </mat-card>
+      </mat-card>      
     </div>
   </div>
 </div>

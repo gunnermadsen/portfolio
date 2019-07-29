@@ -41,6 +41,12 @@ app.engine('html', ngExpressEngine({
   ]
 }));
 
+app.use((request: Request, response: Response) => {
+  if (!request.secure) {
+    response.redirect(`https://${request.headers.host}${request.url}`);
+  }
+})
+
 app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);
 

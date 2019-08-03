@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
             'Angular 8',
             'NgRx 8',
             'RxJS 6.5',
-            'TypeScript 3.5',
+            'TypeScript',
             'Angular Material design',
             'Bootstrap 4',
             'CSS',
@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
         technologies: {
           FrontEnd: [
             'Angular 8',
+            'TypeScript',
             'RxJS 6.5',
             'NgRx 8',
             'Angular Material design',
@@ -95,6 +96,7 @@ export class HomeComponent implements OnInit {
         technologies: {
           FrontEnd: [
             'Angular 7',
+            'TypeScript',
             'RxJS 6.5',
             'NgRx 7',
             'Angular Material design',

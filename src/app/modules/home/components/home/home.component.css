@@ -1,17 +1,9 @@
-.mat-card {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.project-card {
-  position: relative;
+.row {
+  overflow-x: hidden;
 }
 
 .project-card-actions {
-  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
 }
-

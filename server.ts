@@ -21,6 +21,9 @@ import * as express from 'express';
 import {join} from 'path';
 import * as compression from 'compression'
 import { NextFunction, Request, Response } from 'express';
+// import { Database } from 'server/db';
+
+import { PortfolioController } from 'server/controllers/portfolio.controller';
 
 // Express server
 const app = express();
@@ -29,6 +32,8 @@ app.use(compression());
 
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
+
+// const db = new Database();
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap} = require('./dist/server/main');

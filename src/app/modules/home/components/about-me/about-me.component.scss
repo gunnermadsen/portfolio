@@ -1,0 +1,132 @@
+html,
+body {
+    background-color: black;
+    scroll-behavior: smooth;
+}
+
+.subheading {
+    font-size: 24px;
+    font-family: Poppins, Arial, sans-serif;
+}
+
+.bio-container {
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    perspective: 3px;
+}
+
+.intro-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-heading {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-background {
+    background-image: url('/assets/bio-background-1-copy.jpg');
+    // background-image: url('https://images.unsplash.com/photo-1504357121897-47698286288d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=29c6dcd6a6f6c6a76c101e4336ae7c2d&auto=format&fit=crop&w=2851&q=80');
+}
+
+.second-background {
+    // background-image: url('https://images.unsplash.com/photo-1538964173425-93884d739596?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=e2f0390d79969aaf31e155bd1f7138b0&amp;auto=format&amp;fit=crop&amp;w=1275&amp;q=80')
+    background-image: url('/assets/gear-shed.jpg');
+}
+
+.third-background {
+    background-image: url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-0.3.5&amp;s=2950e56dc2bba8a65b82f130aa4e47ea&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60')
+}
+
+.fourth-background {
+    background-image: url('https://images.unsplash.com/photo-1538982198821-0714ff3d74ba?ixlib=rb-0.3.5&amp;s=0550cf3351896481de327a10971739f1&amp;auto=format&amp;fit=crop&amp;w=1251&amp;q=80')
+}
+
+.avatar {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    
+    background-image: url('/assets/profile-picture.jpg');
+    background-size: cover;
+    background-position: top center;
+    display: block;
+}
+
+section > h3.text-center, h1.part-2 {
+    width: 60%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    section > h3.text-center {
+        width: 75%;
+    }
+
+}
+
+section {
+    background-size: cover;
+    color: white;
+    background-color: var(--bg, --color-black);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+
+    &.image {
+        background-position: center center;
+        transform: translateZ(-1px) scale(1.5);
+        /* Force the background image to fill the whole element. */
+        background-size: cover;
+        /* Keep the image from overlapping sibling elements. */
+        z-index: -1;
+        height: 100vh;
+    }
+
+    &.text {
+        height: 50vh;
+        
+        justify-content: center;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        &.text {
+            height: 100vh;
+        }
+
+    }
+
+
+    
+
+    &.heading {
+        z-index: -1;
+        
+        transform: translateY(-50vh) translateZ(1px) scale(1);
+    }
+}
+
+.footer {
+    position: relative;
+    display: block;
+    background-color: black;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+        font-weight: normal; 
+        color: var(--color-blue);
+    }
+}

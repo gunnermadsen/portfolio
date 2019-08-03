@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
         name: 'Mindful Meals',
         description: 'Mindful Meals facilitates tracking grocery items in your pantry, suggests recipes for pantry items, and helps to reduce the amount of food you consume.',
         url: 'https://mindfulmeals.herokuapp.com',
+        type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/mindfulmeals',
         technologies: {
           FrontEnd: [
@@ -50,6 +51,7 @@ export class HomeComponent implements OnInit {
         name: 'Shareily',
         description: 'A clone of Dropbox, the well-known file sharing application.',
         url: 'https://www.shareily.com',
+        type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/coolshare',
         technologies: {
           FrontEnd: [
@@ -87,6 +89,7 @@ export class HomeComponent implements OnInit {
         name: 'KeyFocus',
         description: 'Keyfocus is a productivity tool for managing communications with others. Its streamlined workflow expedites the meeting creation process, and its intuitive user interface facilities fast correspondance.',
         url: 'http://dev01.keyfocus.io',
+        type: 'Web Application',
         githubUrl: null,
         technologies: {
           FrontEnd: [

@@ -1,35 +1,33 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav>
-    <!-- <div style="height: 80px; background-color: grey;"></div> -->
 
-    <mat-nav-list>
-      <a mat-list-item (click)="sidenav.close()">
-        <mat-icon>close</mat-icon>
-      </a>
-      <a mat-list-item routerLink="/aboutme">
-        <span>About Me</span>
-      </a>
-      <a mat-list-item routerLink="/projects">
-        <span>Projects</span>
-      </a>
-      
-    </mat-nav-list>
-    
-  </mat-sidenav>
-
-  <mat-toolbar color="primary">
-    <div class="navbar-center">
-      <button type="button" mat-icon-button (click)="sidenav.toggle()">
+  <div class="nav-container" [class.is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="nav-toolbar">
+      <button mat-icon-button (click)="navbar.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <button mat-button type="button" routerLink="/projects">
-        <h4>Gunner Madsen</h4>
+      <button mat-button routerLink="/aboutme">
+        <h2>Gunner Madsen</h2>
       </button>
-    </div>
-  </mat-toolbar>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #navbar [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list (click)="navbar.toggle()">
+          <a mat-list-item>
+            <mat-icon>close</mat-icon>
+          </a>
+          <a mat-list-item routerLink="/aboutme">
+            <span>About Me</span>
+          </a>
+          <a mat-list-item routerLink="/projects">
+            <span>Projects</span>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
 
-  <div class="container-fluid">
-    <router-outlet></router-outlet>
+      <div class="container-fluid px-0">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-container>
   </div>
   
-</mat-sidenav-container>

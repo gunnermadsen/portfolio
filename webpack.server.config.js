@@ -2,9 +2,15 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
   mode: 'none',
+  // devServer: {
+  //   contentBase: path.join(__dirname, 'src'),
+  //   hot: true
+  // },
   entry: {
     // This is our Express server for Dynamic universal
     server: './server.ts'
@@ -46,6 +52,12 @@ module.exports = {
       /(.+)?express(\\|\/)(.+)?/,
       path.join(__dirname, 'src'),
       {}
-    )
+    ),
+    // new HtmlWebpackPlugin({
+    //   filename: 'src/index.html',
+    //   template: 'index.html'
+    // }),
+    // new webpack.NamedModulesPlugin(),
+    // new webpack.HotModuleReplacementPlugin()
   ]
 };

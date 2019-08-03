@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.projects = [
       {
         name: 'Mindful Meals',
-        description: 'Mindful Meals facilitates tracking grocery items in your pantry, suggests recipes for pantry items, and helps to reduce the amount of food you consume.',
+        description: 'Mindful Meals makes it easy to track grocery items in your pantry, and will suggest recipes for pantry items, while helping to reduce the amount of food you throw away.',
         url: 'https://mindfulmeals.herokuapp.com',
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/mindfulmeals',
@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
           FrontEnd: [
             'Angular 8',
             'NgRx 8',
+            'RxJS 6.5',
             'TypeScript 3.5',
             'Angular Material design',
             'Bootstrap 4',
@@ -87,13 +88,14 @@ export class HomeComponent implements OnInit {
       // },
       {
         name: 'KeyFocus',
-        description: 'Keyfocus is a productivity tool for managing communications with others. Its streamlined workflow expedites the meeting creation process, and its intuitive user interface facilities fast correspondance.',
+        description: 'Keyfocus is a scheduling tool for creating and scheduling meetings with others. ',
         url: 'http://dev01.keyfocus.io',
         type: 'Web Application',
         githubUrl: null,
         technologies: {
           FrontEnd: [
             'Angular 7',
+            'RxJS 6.5',
             'NgRx 7',
             'Angular Material design',
             'Bootstrap 4',
@@ -105,6 +107,8 @@ export class HomeComponent implements OnInit {
             'ASP.NET Core Web API',
             'C#',
             'SendGrid',
+            'SQL Server',
+
           ]
         },
         image: `${this.url}/assets/keyfocus-background.jpg`

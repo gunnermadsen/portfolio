@@ -124,6 +124,49 @@ export class HomeComponent implements OnInit {
       // ], 
       // image: 'https://via.placeholder.com/210x150'
       // }
+      {
+        name: 'Websheets',
+        description: 'Web sheets is a web based spreadsheet application for creating, editing, and saving spreadsheet documents.',
+        url: null,
+        type: 'Web Application',
+        githubUrl: 'https://github.com/gunnermadsen/websheets',
+        technologies: {
+          FrontEnd: [
+            'Angular 7',
+            'TypeScript',
+            'RxJS 6.5',
+            // 'NgRx 7',
+            // 'Angular Material design',
+            // 'Bootstrap 4',
+            'CSS3',
+            'HTML5'
+          ],
+          BackEnd: [
+            'Not Applicable'
+          ]
+        },
+        image: `https://via.placeholder.com/210x133`
+      },
+      {
+        name: 'Portfolio API',
+        description: 'My RESTful service used for managing the back end related features that my portfolio applications use',
+        url: null,
+        type: 'RESTful Web Service',
+        githubUrl: 'https://github.com/gunnermadsen/portfolioapis',
+        technologies: {
+          FrontEnd: [
+            'Not Applicable'
+          ],
+          BackEnd: [
+            'NodeJS',
+            'ExpressJS',
+            'MongoDB',
+            'Mongoose/Typegoose',
+            'Multer'
+          ]
+        },
+        image: 'https://via.placeholder.com/210x133'
+      },
     ]
   }
 

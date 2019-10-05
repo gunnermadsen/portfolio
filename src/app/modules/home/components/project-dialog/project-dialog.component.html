@@ -40,8 +40,8 @@
     <div class="row mt-2">
         <div class="col-auto ml-auto">
             
-            <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)">Live Site</button>
-            <button mat-raised-button class="ml-2" *ngIf="project.githubUrl != null" (click)="routeToExternalSite(project.githubUrl)">Github</button>
+            <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live Site</button>
+            <button mat-raised-button class="ml-2" (click)="routeToExternalSite(project.githubUrl)" *ngIf="project.githubUrl != null">Github</button>
         </div>
     </div>
 </div>

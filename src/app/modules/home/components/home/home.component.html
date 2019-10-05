@@ -22,7 +22,7 @@
         <img mat-card-image [src]="project.image">
         
         <mat-card-actions class="project-card-actions">
-          <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)">Live</button>
+          <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live</button>
           <button mat-raised-button color="accent" (click)="routeToExternalSite(project.githubUrl)" *ngIf="project.githubUrl != null">Github</button>
         </mat-card-actions>
 

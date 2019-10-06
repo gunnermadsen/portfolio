@@ -135,6 +135,29 @@ export class HomeComponent implements OnInit {
         },
         image: `${this.url}/assets/keyfocus-background.jpg`
       },
+      {
+        name: 'WebFS',
+        description: 'WebFS is a web based file management application written in AngularJS, and the predecessor to Shareily.',
+        url: null,
+        type: 'Web Application',
+        githubUrl: 'https://github.com/gunnermadsen/webfs',
+        technologies: {
+          FrontEnd: [
+            'AngularJS',
+            'jQuery',
+            'Jade Templating',
+            'Bootstrap 4',
+            'CSS3',
+            'HTML5'
+          ],
+          BackEnd: [
+            'Node JS',
+            'ExpressJS MVC',
+            'Multer'
+          ]
+        },
+        image: `https://via.placeholder.com/210x133`
+      },
       // {
       //   name: 'Moving Calculator',
       //   description: 'An app for determining basic transportation costs for delivery drivers',

@@ -23,10 +23,10 @@ import * as compression from 'compression'
 import { NextFunction, Request, Response } from 'express';
 import * as https from 'https'
 
-// import { PortfolioController } from './server/controllers/portfolio.controller';
+import { PortfolioController } from './server/controllers/portfolio.controller';
 
 // Express server
-const app = express();
+const app = express()
 
 app.use(compression());
 
@@ -65,7 +65,7 @@ app.get('*.*', express.static(DIST_FOLDER, {
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  // PortfolioController.logNetworkRequest(req, res)
+  PortfolioController.logNetworkRequest(req, res)
   res.render('index', { req });
 });
 

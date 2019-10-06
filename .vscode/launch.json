@@ -24,17 +24,37 @@
                 "<node_internals>/**/*.js"
             ],
         },
-        {
-            "name": "Portfolio Web Server",
-            "type": "node",
-            "request": "attach",
-            "restart": true,
-            "protocol": "inspector",
-            "processId": "${command:PickProcess}",
-            "skipFiles": [
-                "${workspaceRoot}/node_modules/**/*.js",
-                "<node_internals>/**/*.js"
-            ]
-        },
+        // {
+        //     "name": "Portfolio Web Server",
+        //     "type": "node",
+        //     "request": "attach",
+        //     "restart": true,
+        //     "protocol": "inspector",
+        //     "processId": "${command:PickProcess}",
+        //     "skipFiles": [
+        //         "${workspaceRoot}/node_modules/**/*.js",
+        //         "<node_internals>/**/*.js"
+        //     ]
+        // },
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "ts-server",
+        //     "args": [
+        //         "${workspaceFolder}\\server.ts"
+        //     ],
+        //     "runtimeArgs": [
+        //         "--nolazy",
+        //         "-r",
+        //         "ts-node/register"
+        //     ],
+        //     "env": {
+        //         "TS_NODE_PROJECT": "tsconfig.server.json"
+        //     },
+        //     "sourceMaps": true,
+        //     "cwd": "${workspaceRoot}",
+        //     "protocol": "inspector",
+        //     "stopOnEntry": true
+        // }
     ]
 }

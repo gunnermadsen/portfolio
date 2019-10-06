@@ -3,18 +3,43 @@ import { prop, Typegoose } from '@hasezoey/typegoose';
 export class RequestLogs extends Typegoose {
     @prop()
     public ip: string
+
+    @prop()
+    public method: string
+
     @prop()
     public ips: string[]
+
     @prop()
-    isSecure: boolean
+    public isSecure: boolean
+
     @prop()
-    hostname: string
+    public hostname: string
+
     @prop()
-    isXHR: boolean
+    public isXHR: boolean
+
     @prop()
-    cookies: any
+    public cookies: any
+
     @prop()
-    url: string
+    public url: string
+
     @prop()
-    timestamp: Date
+    public baseUrl: string
+
+    @prop()
+    public originalUrl: string
+
+    @prop()
+    public timestamp: Date
+
+    @prop()
+    public protocol: string
+
+    @prop()
+    public subdomains: string[]
+
+    @prop()
+    public statusCode: number
 }

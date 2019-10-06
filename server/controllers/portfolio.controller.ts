@@ -17,19 +17,25 @@ export class PortfolioController {
             let data = {
                 ip: request.ip,
                 ips: request.ips,
+                method: request.method,
                 isSecure: request.secure,
                 hostname: request.hostname,
+                protocol: request.protocol,
+                subdomains: request.subdomains,
                 isXHR: request.xhr,
+                statusCode: response.statusCode,
                 cookies: request.cookies,
                 url: request.url,
+                baseUrl: request.baseUrl,
+                originalUrl: request.originalUrl,
                 timestamp: new Date()
             }
+            await requestLogModel.create(data)
 
-            let result = await requestLogModel.create(data)
             return
         } 
         catch (error) {
-            console.log(error)
+            return
         }
     }
 }

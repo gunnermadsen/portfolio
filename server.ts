@@ -23,7 +23,7 @@ import * as compression from 'compression'
 import { NextFunction, Request, Response } from 'express';
 import * as https from 'https'
 
-import { PortfolioController } from './server/controllers/portfolio.controller';
+// import { PortfolioController } from './server/controllers/portfolio.controller';
 
 // Express server
 const app = express();

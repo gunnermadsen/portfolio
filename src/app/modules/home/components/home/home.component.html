@@ -1,32 +1,30 @@
-<div class="container-fluid">
-  <div class="row mt-3">
-    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 mb-4" *ngFor="let project of projects; index as i">
-      <mat-card
-        [class.mat-elevation-z12]="hovering[i]"
-        [class.mat-elevation-z3]="!hovering[i]"
-        (mouseover)="hovering[i] = true"
-        (mouseout)="hovering[i] = false">
-
-        <div class="row">
-          <div class="col px-1">
-            <mat-card-title>{{ project.name }}</mat-card-title>
-            <mat-card-subtitle>{{ project.type }}</mat-card-subtitle>
-          </div>
-          <div class="col-auto px-0">
-            <button mat-icon-button color="primary" (click)="openProjectDialog(i)">
-              <mat-icon>information</mat-icon>
-            </button>
-          </div>
-        </div> 
-
-        <img mat-card-image [src]="project.image">
-        
-        <mat-card-actions class="project-card-actions">
-          <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live</button>
-          <button mat-raised-button color="accent" (click)="routeToExternalSite(project.githubUrl)" *ngIf="project.githubUrl != null">Github</button>
-        </mat-card-actions>
-
-      </mat-card>
-    </div>
+<div class="project-container">
+  <div *ngFor="let project of projects; index as i" class="project-card">
+    <mat-card
+      [class.mat-elevation-z12]="hovering[i]"
+      [class.mat-elevation-z3]="!hovering[i]"
+      (mouseover)="hovering[i] = true"
+      (mouseout)="hovering[i] = false">
+  
+      <div class="project-card-heading">
+        <div class="card-title">
+          <mat-card-title>{{ project.name }}</mat-card-title>
+          <mat-card-subtitle>{{ project.type }}</mat-card-subtitle>
+        </div>
+        <div class="card-action">
+          <button mat-icon-button color="primary" (click)="openProjectDialog(i)">
+            <mat-icon>information</mat-icon>
+          </button>
+        </div>
+      </div> 
+  
+      <img mat-card-image [src]="project.image">
+      
+      <mat-card-actions class="project-card-actions">
+        <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live</button>
+        <button mat-raised-button color="accent" (click)="routeToExternalSite(project.githubUrl)" *ngIf="project.githubUrl != null">Github</button>
+      </mat-card-actions>
+  
+    </mat-card>
   </div>
 </div>

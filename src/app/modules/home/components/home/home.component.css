@@ -1,9 +1,0 @@
-.row {
-  overflow-x: hidden;
-}
-
-.project-card-actions {
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-}

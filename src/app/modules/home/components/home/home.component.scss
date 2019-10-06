@@ -1,0 +1,39 @@
+.project-container {
+  overflow-x: hidden;
+  padding: 10px;
+  display: grid;
+  height: 100%;
+  gap: 25px 25px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // grid-template-rows: 300px 300px;
+  grid-auto-rows: minmax(300px, auto);
+}
+
+.project-card {
+  height: auto;
+  width: auto;
+}
+
+.project-card-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &.card-title {
+
+  }
+
+  &.card-action {
+
+  }
+
+}
+
+.project-card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+

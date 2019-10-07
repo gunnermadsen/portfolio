@@ -3,6 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeExternals = require('webpack-node-externals')
 
 
 module.exports = {
@@ -15,9 +16,12 @@ module.exports = {
     // This is our Express server for Dynamic universal
     server: './server.ts'
   },
-  externals: {
-    './dist/server/main': 'require("./server/main")'
-  },
+  externals: [
+    nodeExternals(), 
+    {
+      './dist/server/main': 'require("./server/main")'
+    }
+  ],
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
   optimization: {

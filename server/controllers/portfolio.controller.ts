@@ -30,6 +30,7 @@ export class PortfolioController {
                 timestamp: new Date()
             }
             await requestLogModel.create(data)
+            console.log("Request Logged at", new Date())
 
             return
         } 

@@ -219,7 +219,8 @@ export class HomeComponent implements OnInit {
       {
         name: 'Meetily',
         description: 'A collaboration tool that features videoconferencing, screensharing and messaging for an all inclusive collaboration experience',
-        url: "https://www.meetilly.com",
+        url: "https://meetilly.herokuapps.com",
+        // url: "https://www.meetilly.com",
         type: 'Web Application',
         githubUrl: null,
         alternative: "Videoconferencing and collaboration tool in your browser",

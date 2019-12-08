@@ -1,26 +1,31 @@
-
-  <div class="nav-container" [class.is-mobile]="mobileQuery.matches">
+  <div class="nav-container" [class.is-mobile]="!state[0]">
     <mat-toolbar color="primary" class="nav-toolbar">
-      <div *ngIf="mobileQuery.matches">
-        <button mat-icon-button (click)="navbar.toggle()">
+      <div *ngIf="state[1]">
+        <button mat-icon-button aria-label="View the navigation menu" (click)="navbar.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <button mat-button routerLink="/aboutme">
+      <button *ngIf="!state[3]" mat-button routerLink="/aboutme">
         <h2>Gunner Madsen's Portfolio</h2>
       </button>
-      <div *ngIf="!mobileQuery.matches">
+      <button *ngIf="state[3]" mat-button routerLink="/aboutme">
+        <h2>Gunner Madsen</h2>
+      </button>
+      <div *ngIf="!state[1]">
         <button mat-button routerLink="/projects">
           <h4>Projects</h4>
         </button>
         <button mat-button routerLink="/aboutme">
           <h4>About Me</h4>
         </button>
+        <button mat-button routerLink="/articles">
+          <h4>Articles</h4>
+        </button>
       </div>
     </mat-toolbar>
   
-    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #navbar [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="!state[0] ? 56 : 0">
+      <mat-sidenav #navbar [fixedInViewport]="!state[0]" fixedTopGap="56">
         <mat-nav-list (click)="navbar.toggle()">
           <a mat-list-item>
             <mat-icon>close</mat-icon>
@@ -31,10 +36,13 @@
           <a mat-list-item routerLink="/projects">
             <span>Projects</span>
           </a>
+          <a mat-list-item routerLink="/articles">
+            <span>Articles</span>
+          </a>
         </mat-nav-list>
       </mat-sidenav>
 
-      <div class="container-fluid px-0">
+      <div class="portfolio-container">
         <router-outlet></router-outlet>
       </div>
 

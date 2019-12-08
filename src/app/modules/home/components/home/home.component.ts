@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
         url: 'https://mindfulmeals.herokuapp.com',
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/mindfulmeals',
+        alternative: "Healthy pizza choice for describing Mindful Meals",
         technologies: {
           FrontEnd: [
             'Angular 8',
@@ -74,6 +75,7 @@ export class HomeComponent implements OnInit {
         url: 'https://www.shareily.com',
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/coolshare',
+        alternative: "Web-based file sharing application",
         technologies: {
           FrontEnd: [
             'Angular 8',
@@ -113,6 +115,7 @@ export class HomeComponent implements OnInit {
         url: 'http://dev01.keyfocus.io',
         type: 'Web Application',
         githubUrl: null,
+        alternative: "Meeting and collaboration tool",
         technologies: {
           FrontEnd: [
             'Angular 7',
@@ -141,6 +144,7 @@ export class HomeComponent implements OnInit {
         url: null,
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/webfs',
+        alternative: "Web-based file sharing application",
         technologies: {
           FrontEnd: [
             'AngularJS',
@@ -173,6 +177,7 @@ export class HomeComponent implements OnInit {
         url: null,
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/websheets',
+        alternative: "Web based spreadsheet application",
         technologies: {
           FrontEnd: [
             'Angular 7',
@@ -196,6 +201,7 @@ export class HomeComponent implements OnInit {
         url: null,
         type: 'RESTful Web Service',
         githubUrl: 'https://github.com/gunnermadsen/portfolioapis',
+        alternative: "Web Server back end for Gunner Madsen's Portfolio",
         technologies: {
           FrontEnd: [
             'Not Applicable'
@@ -206,6 +212,38 @@ export class HomeComponent implements OnInit {
             'MongoDB',
             'Mongoose/Typegoose',
             'Multer'
+          ]
+        },
+        image: 'https://via.placeholder.com/210x133'
+      },
+      {
+        name: 'Meetily',
+        description: 'A collaboration tool that features videoconferencing, screensharing and messaging for an all inclusive collaboration experience',
+        url: "https://www.meetilly.com",
+        type: 'Web Application',
+        githubUrl: null,
+        alternative: "Videoconferencing and collaboration tool in your browser",
+        technologies: {
+          FrontEnd: [
+            'Angular 8',
+            'NgRx 8',
+            'RxJS 6.5',
+            'TypeScript',
+            'WebRTC',
+            'SocketIO Client',
+            'Angular Material',
+            'Bootstrap 4',
+            'CSS',
+            'HTML5',
+          ],
+          BackEnd: [
+            'Angular Universal SSR',
+            'Webpack',
+            'NodeJS',
+            'ExpressJS',
+            'MongoDB',
+            'Mongoose/Typegoose',
+            'SocketIO'
           ]
         },
         image: 'https://via.placeholder.com/210x133'

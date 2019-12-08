@@ -12,13 +12,13 @@
           <mat-card-subtitle>{{ project.type }}</mat-card-subtitle>
         </div>
         <div class="card-action">
-          <button mat-icon-button color="primary" (click)="openProjectDialog(i)">
+          <button mat-icon-button color="primary" (click)="openProjectDialog(i)" aria-label="View project information">
             <mat-icon>information</mat-icon>
           </button>
         </div>
       </div> 
   
-      <img mat-card-image [src]="project.image">
+      <img mat-card-image [alt]="project.alternative" [src]="project.image">
       
       <mat-card-actions class="project-card-actions">
         <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live</button>

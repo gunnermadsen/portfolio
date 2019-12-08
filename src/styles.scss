@@ -31,8 +31,8 @@
 
 // Define the default theme.
 $primary: mat-palette($mat-indigo, A400);
-$accent: mat-palette($mat-light-blue, A700, A600, A900);
-$warn: mat-palette($mat-red);
+$accent: mat-palette($mat-light-blue, 400);
+$warn: mat-palette($mat-red, A700);
 $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);

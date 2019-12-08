@@ -1,23 +1,34 @@
-import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
+import { Component } from '@angular/core'
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
+import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnDestroy {
-  public mobileQuery: MediaQueryList;
-  public isSM: boolean;
-  private _mobileQueryListener: () => void;
-  constructor(private cdr: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => this.cdr.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+export class AppComponent {
 
-  }
+  public mediaObservable$: Observable<boolean>
 
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+  public state: boolean[] = [ false, false, false, false ]
+
+  constructor(private _breakpointObserver: BreakpointObserver) {
+
+    this._breakpointObserver
+      .observe([
+        '(max-width: 1200px)',
+        '(max-width: 900px)',
+        '(max-width: 600px)',
+        '(max-width: 350px)'
+      ])
+      .subscribe(
+        (state: BreakpointState) => 
+          Object.values(state.breakpoints).map(
+            (breakpoint: boolean, index: number) => 
+              this.state[index] = breakpoint
+          )
+      )
   }
 }

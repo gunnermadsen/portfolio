@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: http://www.gunner-madsen.com/sitemap.xml

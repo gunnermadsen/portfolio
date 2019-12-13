@@ -67,12 +67,12 @@ export class HomeComponent implements OnInit {
             'Mongoose/Typegoose',
           ]
         },
-        image: `${this.url}/assets/mindful-meals_background.jpg`
+        image: `${this.url}/assets/MindfulMeals-Project.jpg`
       },
       {
-        name: 'Shareily',
+        name: 'Coolshare',
         description: 'A clone of Dropbox, the well-known file sharing application.',
-        url: 'https://www.shareily.com',
+        url: 'https://coolshare.herokuapp.com',
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/coolshare',
         alternative: "Web-based file sharing application",

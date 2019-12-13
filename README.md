@@ -1,6 +1,6 @@
 # Gunner Madsen's Portfolio
 
-[Live] (https://www.gunner.madsen.com)
+[Live](https://www.gunner.madsen.com)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
@@ -29,4 +29,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Additional Information
-If you like the code in my portfolio, please visit my [Portfolio] (https://www.gunner-madsen.com) to view more of my projects.
+If you like the projects that Gunner Madsen has created, please visit his [Portfolio] (https://www.gunner-madsen.com) to view more projects.

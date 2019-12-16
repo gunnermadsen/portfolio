@@ -98,7 +98,7 @@ export class HomeComponent implements OnInit {
             'Multer'
           ]
         },
-        image: 'https://via.placeholder.com/210x133'
+        image: `${this.url}/assets/Coolshare-Project.jpg`
       },
       // {
       //   name: 'Cafe Finder',
@@ -109,35 +109,35 @@ export class HomeComponent implements OnInit {
       // ],   
       // image: 'https://via.placeholder.com/210x150'
       // },
-      {
-        name: 'KeyFocus',
-        description: 'Keyfocus is a scheduling tool for creating and scheduling meetings with others. ',
-        url: 'http://dev01.keyfocus.io',
-        type: 'Web Application',
-        githubUrl: null,
-        alternative: "Meeting and collaboration tool",
-        technologies: {
-          FrontEnd: [
-            'Angular 7',
-            'TypeScript',
-            'RxJS 6.5',
-            'NgRx 7',
-            'Angular Material',
-            'Bootstrap 4',
-            'CSS',
-            'HTML5',
+      // {
+      //   name: 'KeyFocus',
+      //   description: 'Keyfocus is a scheduling tool for creating and scheduling meetings with others. ',
+      //   url: 'http://dev01.keyfocus.io',
+      //   type: 'Web Application',
+      //   githubUrl: null,
+      //   alternative: "Meeting and collaboration tool",
+      //   technologies: {
+      //     FrontEnd: [
+      //       'Angular 7',
+      //       'TypeScript',
+      //       'RxJS 6.5',
+      //       'NgRx 7',
+      //       'Angular Material',
+      //       'Bootstrap 4',
+      //       'CSS',
+      //       'HTML5',
 
-          ],
-          BackEnd: [
-            'ASP.NET Core Web API',
-            'C#',
-            'SendGrid',
-            'SQL Server',
+      //     ],
+      //     BackEnd: [
+      //       'ASP.NET Core Web API',
+      //       'C#',
+      //       'SendGrid',
+      //       'SQL Server',
 
-          ]
-        },
-        image: `${this.url}/assets/keyfocus-background.jpg`
-      },
+      //     ]
+      //   },
+      //   image: `${this.url}/assets/keyfocus-background.jpg`
+      // },
       {
         name: 'WebFS',
         description: 'WebFS is a web based file management application written in AngularJS, and the predecessor to Shareily.',

@@ -1,10 +1,15 @@
 <div class="container-fluid px-0">
     <div class="row">
-        <div class="col">
+        <div class="col-auto">
             <h2 class="mb-1">{{ project.name }}</h2>
-            <mat-divider></mat-divider>
+        </div>
+        <div class="col-auto ml-auto">
+            <button mat-icon-button (click)="closeDialog()">
+                <mat-icon>close</mat-icon>
+            </button>
         </div>
     </div>
+    <mat-divider></mat-divider>
     <div class="row mb-3 mt-3">
         <div class="col">
             {{ project.description }}

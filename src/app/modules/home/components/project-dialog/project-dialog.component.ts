@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-project-dialog',
@@ -10,7 +10,7 @@ export class ProjectDialogComponent implements OnInit {
 
   public project: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<any>) {
     this.project = data.project;
   }
 
@@ -19,6 +19,10 @@ export class ProjectDialogComponent implements OnInit {
 
   public routeToExternalSite(url: string): void {
     window.open(url, "_blank");
+  }
+
+  public closeDialog(): void {
+    this.dialogRef.close()
   }
 
 }

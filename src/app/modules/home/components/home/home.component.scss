@@ -29,6 +29,13 @@
 
 }
 
+.project-card-img {
+  object-fit: cover;
+  max-height: 195px;
+  object-position: 100% 0;
+  // width: 100%;
+}
+
 .project-card-actions {
   display: flex;
   flex-direction: row;

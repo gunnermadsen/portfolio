@@ -1,0 +1,15 @@
+<div class="contact-container">
+    <div class="contact-wrapper">
+        <div class="wrapper-heading">
+            <h1>Lets get in touch</h1>
+            <h4>If you want to talk to me about a project, or just say hello, please drop me a message at <a href="mailto:gunner.madsen@outlook.com">gunner.madsen@outlook.com</a></h4>
+        </div>
+        <div class="wrapper-body">
+            <h1>Connect with me</h1>
+            <h4>Find me on social media!</h4>
+            <div class="social-buttons">
+                <button mat-raised-button [ngClass]="media.style" color="primary" (click)="navigate(media.link)" *ngFor="let media of socialMedia; index as i">{{ media.name }}<img [src]="media.image"/></button>
+            </div>
+        </div>
+    </div>
+</div>

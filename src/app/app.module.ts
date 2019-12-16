@@ -10,6 +10,7 @@ import { ProjectDialogComponent } from './modules/home/components/project-dialog
 import { AboutMeComponent } from './modules/home/components/about-me/about-me.component';
 import { NotFoundComponent } from './modules/home/components/not-found/not-found.component';
 import { ArticlesComponent } from './modules/home/components/articles/articles.component';
+import { ContactComponent } from './modules/home/components/contact/contact.component';
 
 
 
@@ -20,7 +21,8 @@ import { ArticlesComponent } from './modules/home/components/articles/articles.c
     ProjectDialogComponent,
     NotFoundComponent,
     AboutMeComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ContactComponent
     
   ],
   imports: [

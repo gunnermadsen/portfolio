@@ -1,6 +1,9 @@
 import { Component, OnInit, isDevMode } from '@angular/core'
 import { MatDialogConfig, MatDialog } from '@angular/material'
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component'
+import { of, Observable } from 'rxjs'
+import { take, debounceTime, tap } from 'rxjs/operators'
+import { IProject } from '../../models/project.model'
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,7 @@ import { ProjectDialogComponent } from '../project-dialog/project-dialog.compone
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public projects: any[]
+  public projects: IProject[]
   public hovering: boolean[] = []
   public url: string
   constructor(private dialog: MatDialog) { }
@@ -36,7 +39,7 @@ export class HomeComponent implements OnInit {
     
   }
 
-  private getProjects(): any[] {
+  private getProjects(): IProject[] {
 
     return [
       {
@@ -100,6 +103,39 @@ export class HomeComponent implements OnInit {
         },
         image: `${this.url}/assets/Coolshare-Project.jpg`
       },
+      {
+        name: 'Meetily',
+        description: 'A collaboration tool that features videoconferencing, screensharing and messaging for an all inclusive collaboration experience',
+        url: "https://meetily.herokuapp.com",
+        // url: "https://www.meetilly.com",
+        type: 'Web Application',
+        githubUrl: null,
+        alternative: "Videoconferencing and collaboration tool in your browser",
+        technologies: {
+          FrontEnd: [
+            'Angular 8',
+            'NgRx 8',
+            'RxJS 6.5',
+            'TypeScript',
+            'WebRTC',
+            'SocketIO Client',
+            'Angular Material',
+            'Bootstrap 4',
+            'CSS3',
+            'HTML5',
+          ],
+          BackEnd: [
+            'Angular Universal SSR',
+            'Webpack',
+            'NodeJS',
+            'ExpressJS',
+            'MongoDB',
+            'Mongoose/Typegoose',
+            'SocketIO'
+          ]
+        },
+        image: `${this.url}/assets/Meetily-Project.jpg`
+      },
       // {
       //   name: 'Cafe Finder',
       //   description: 'An app for finding coffee shops enroute to a destination.',
@@ -138,30 +174,30 @@ export class HomeComponent implements OnInit {
       //   },
       //   image: `${this.url}/assets/keyfocus-background.jpg`
       // },
-      {
-        name: 'WebFS',
-        description: 'WebFS is a web based file management application written in AngularJS, and the predecessor to Shareily.',
-        url: null,
-        type: 'Web Application',
-        githubUrl: 'https://github.com/gunnermadsen/webfs',
-        alternative: "Web-based file sharing application",
-        technologies: {
-          FrontEnd: [
-            'AngularJS',
-            'jQuery',
-            'Jade Templating',
-            'Bootstrap 4',
-            'CSS3',
-            'HTML5'
-          ],
-          BackEnd: [
-            'Node JS',
-            'ExpressJS MVC',
-            'Multer'
-          ]
-        },
-        image: `https://via.placeholder.com/210x133`
-      },
+      // {
+      //   name: 'WebFS',
+      //   description: 'WebFS is a web based file management application written in AngularJS, and the predecessor to Shareily.',
+      //   url: null,
+      //   type: 'Web Application',
+      //   githubUrl: 'https://github.com/gunnermadsen/webfs',
+      //   alternative: "Web-based file sharing application",
+      //   technologies: {
+      //     FrontEnd: [
+      //       'AngularJS',
+      //       'jQuery',
+      //       'Jade Templating',
+      //       'Bootstrap 4',
+      //       'CSS3',
+      //       'HTML5'
+      //     ],
+      //     BackEnd: [
+      //       'Node JS',
+      //       'ExpressJS MVC',
+      //       'Multer'
+      //     ]
+      //   },
+      //   image: `https://via.placeholder.com/210x133`
+      // },
       // {
       //   name: 'Moving Calculator',
       //   description: 'An app for determining basic transportation costs for delivery drivers',
@@ -172,15 +208,16 @@ export class HomeComponent implements OnInit {
       // image: 'https://via.placeholder.com/210x150'
       // }
       {
-        name: 'Websheets',
-        description: 'Web sheets is a web based spreadsheet application for creating, editing, and saving spreadsheet documents.',
+
+        name: 'Whiteboarder',
+        description: 'Whiteboarder is a tool used for drawing shapes and charts in the browser.',
         url: null,
         type: 'Web Application',
-        githubUrl: 'https://github.com/gunnermadsen/websheets',
-        alternative: "Web based spreadsheet application",
+        githubUrl: 'https://github.com/gunnermadsen/whiteboarder',
+        alternative: "Web based drawing application",
         technologies: {
           FrontEnd: [
-            'Angular 7',
+            'Angular 8',
             'TypeScript',
             'RxJS 6.5',
             // 'NgRx 7',
@@ -193,7 +230,31 @@ export class HomeComponent implements OnInit {
             'Not Applicable'
           ]
         },
-        image: `https://via.placeholder.com/210x133`
+        image: `https://via.placeholder.com/210x120`
+      },
+      {
+        name: 'Websheets',
+        description: 'Web sheets is a web based spreadsheet application for creating, editing, and saving spreadsheet documents.',
+        url: null,
+        type: 'Web Application',
+        githubUrl: 'https://github.com/gunnermadsen/websheets',
+        alternative: "Web based spreadsheet application",
+        technologies: {
+          FrontEnd: [
+            'Angular 8',
+            'TypeScript',
+            'RxJS 6.5',
+            // 'NgRx 7',
+            // 'Angular Material design',
+            // 'Bootstrap 4',
+            'CSS3',
+            'HTML5'
+          ],
+          BackEnd: [
+            'Not Applicable'
+          ]
+        },
+        image: `https://via.placeholder.com/210x120`
       },
       {
         name: 'Portfolio API',
@@ -214,41 +275,8 @@ export class HomeComponent implements OnInit {
             'Multer'
           ]
         },
-        image: 'https://via.placeholder.com/210x133'
-      },
-      {
-        name: 'Meetily',
-        description: 'A collaboration tool that features videoconferencing, screensharing and messaging for an all inclusive collaboration experience',
-        url: "https://meetily.herokuapp.com",
-        // url: "https://www.meetilly.com",
-        type: 'Web Application',
-        githubUrl: null,
-        alternative: "Videoconferencing and collaboration tool in your browser",
-        technologies: {
-          FrontEnd: [
-            'Angular 8',
-            'NgRx 8',
-            'RxJS 6.5',
-            'TypeScript',
-            'WebRTC',
-            'SocketIO Client',
-            'Angular Material',
-            'Bootstrap 4',
-            'CSS',
-            'HTML5',
-          ],
-          BackEnd: [
-            'Angular Universal SSR',
-            'Webpack',
-            'NodeJS',
-            'ExpressJS',
-            'MongoDB',
-            'Mongoose/Typegoose',
-            'SocketIO'
-          ]
-        },
-        image: 'https://via.placeholder.com/210x133'
-      },
+        image: 'https://via.placeholder.com/210x120'
+      }
     ]
   }
 }

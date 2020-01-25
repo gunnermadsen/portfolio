@@ -1,10 +1,6 @@
 <div class="project-container">
   <div *ngFor="let project of projects; index as i" class="project-card">
-    <mat-card
-      [class.mat-elevation-z12]="hovering[i]"
-      [class.mat-elevation-z3]="!hovering[i]"
-      (mouseover)="hovering[i] = true"
-      (mouseout)="hovering[i] = false">
+    <mat-card class="mat-elevation-z3" cardHover>
   
       <div class="project-card-heading">
         <div class="card-title">

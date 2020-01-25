@@ -11,7 +11,7 @@ import { AboutMeComponent } from './modules/home/components/about-me/about-me.co
 import { NotFoundComponent } from './modules/home/components/not-found/not-found.component';
 import { ArticlesComponent } from './modules/home/components/articles/articles.component';
 import { ContactComponent } from './modules/home/components/contact/contact.component';
-
+import { CardHoverDirective } from './modules/home/directives/card-hover/card-hover.directive';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { ContactComponent } from './modules/home/components/contact/contact.comp
     NotFoundComponent,
     AboutMeComponent,
     ArticlesComponent,
-    ContactComponent
+    ContactComponent,
+    CardHoverDirective
     
   ],
   imports: [

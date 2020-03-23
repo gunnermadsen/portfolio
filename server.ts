@@ -44,14 +44,14 @@ app.engine('html', ngExpressEngine({
   ]
 }))
 
-app.use((request, response) => {
-  if (process.env.NODE_ENV === 'production') {
-    if (!request.secure) {
-      PortfolioController.logNetworkRequest(request, response)
-      response.redirect(`https://www.gunner-madsen.com`)
-    }
-  }
-})
+// app.use((request, response) => {
+//   if (process.env.NODE_ENV === 'production') {
+//     if (!request.secure) {
+//       PortfolioController.logNetworkRequest(request, response)
+//       response.redirect(`https://www.gunner-madsen.com`)
+//     }
+//   }
+// })
 
 app.set('view engine', 'html')
 app.set('views', DIST_FOLDER)

@@ -33,6 +33,8 @@ app.use(compression())
 const PORT = process.env.PORT || 4000
 const DIST_FOLDER = path.join(process.cwd(), 'dist/browser')
 
+app.enable('trust proxy')
+
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap } = require('./dist/server/main')
 
@@ -51,7 +53,9 @@ app.use((request, response, next) => {
     next()
   }
   else {
-    response.redirect(301, `https://${request.headers.host}${request.url}`)
+    const url = `https://${request.headers.host}${request.url}`
+    console.log(url)
+    response.redirect(301, url)
   }
 
 })

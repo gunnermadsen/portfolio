@@ -44,11 +44,16 @@ app.engine('html', ngExpressEngine({
   ]
 }))
 
-app.use((request, response) => {
-  if (!request.secure) {
-    PortfolioController.logNetworkRequest(request, response)
-    response.redirect(301, 'https://gunner-madsen.com')
+app.use((request, response, next) => {
+  PortfolioController.logNetworkRequest(request, response)
+
+  if (request.secure) {
+    next()
   }
+  else {
+    response.redirect(301, `https://${request.headers.host}${request.url}`)
+  }
+
 })
 
 app.set('view engine', 'html')

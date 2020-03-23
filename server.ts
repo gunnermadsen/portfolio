@@ -47,7 +47,7 @@ app.engine('html', ngExpressEngine({
 app.use((request, response) => {
   if (!request.secure) {
     PortfolioController.logNetworkRequest(request, response)
-    response.redirect('https://gunner-madsen.com', 301)
+    response.redirect(301, 'https://gunner-madsen.com')
   }
 })
 

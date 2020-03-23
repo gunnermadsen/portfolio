@@ -48,7 +48,7 @@ app.use((request, response) => {
   if (process.env.NODE_ENV === 'production') {
     if (!request.secure) {
       PortfolioController.logNetworkRequest(request, response)
-      response.redirect(`https://gunner-madsen.com`)
+      response.redirect(`https://www.gunner-madsen.com`)
     }
   }
 })

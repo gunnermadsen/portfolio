@@ -326,5 +326,5 @@ export class HomeComponent implements OnInit {
         image: 'https://via.placeholder.com/210x120'
       }
     ]
-  },
+  }
 }

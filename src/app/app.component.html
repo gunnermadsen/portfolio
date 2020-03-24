@@ -8,9 +8,6 @@
       <button *ngIf="!state[3]" mat-button routerLink="/aboutme">
         <h2>Gunner Madsen</h2>
       </button>
-      <!-- <button *ngIf="state[3]" mat-button routerLink="/aboutme">
-        <h2>Gunner Madsen</h2>
-      </button> -->
       <div *ngIf="!state[1]">
         <button mat-button routerLink="/projects">
           <h4>Portfolio</h4>
@@ -35,6 +32,9 @@
           </a>
           <a mat-list-item routerLink="/aboutme">
             <span>About Me</span>
+          </a>
+          <a mat-list-item routerLink="/contact">
+            <span>Contact</span>
           </a>
           <a mat-list-item routerLink="/projects">
             <span>Portfolio</span>

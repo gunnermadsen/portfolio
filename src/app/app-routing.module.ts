@@ -8,7 +8,7 @@ import { ContactComponent } from './modules/home/components/contact/contact.comp
 
 const routes: Routes = [
   {
-    path: 'projects',
+    path: '',
     component: HomeComponent
   },
   {
@@ -23,11 +23,11 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
-  {
-    path: '',
-    redirectTo: 'projects',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'projects',
+  //   pathMatch: 'full'
+  // },
   {
     path: '**',
     component: NotFoundComponent

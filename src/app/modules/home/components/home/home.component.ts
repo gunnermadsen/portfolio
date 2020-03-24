@@ -233,8 +233,8 @@ export class HomeComponent implements OnInit {
         image: `https://via.placeholder.com/210x120`
       },
       {
-        name: 'React Music Streamer',
-        description: 'React Music Streamer (codename Streamly) is a Browser based music streaming app',
+        name: 'Streamly',
+        description: 'Streamly is a Browser based music streaming app built with React Typescript, and Redux; and utilizes the Web Audio API to process audio from the server.',
         url: null,
         type: 'Web Application',
         githubUrl: 'https://github.com/gunnermadsen/streamly',
@@ -242,11 +242,13 @@ export class HomeComponent implements OnInit {
         technologies: {
           FrontEnd: [
             'React',
+            'Redux',
+            'Web Audio API',
             'TypeScript',
             'RxJS 6.5',
             'Webpack 4',
             'Material UI',
-            'CSS3',
+            'SCSS',
             'HTML5'
           ],
           BackEnd: [

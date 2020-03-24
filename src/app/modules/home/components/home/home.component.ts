@@ -208,31 +208,6 @@ export class HomeComponent implements OnInit {
       // image: 'https://via.placeholder.com/210x150'
       // }
       {
-
-        name: 'Whiteboarder',
-        description: 'Whiteboarder is a tool used for drawing shapes and charts in the browser.',
-        url: null,
-        type: 'Web Application',
-        githubUrl: 'https://github.com/gunnermadsen/whiteboarder',
-        alternative: "Web based drawing application",
-        technologies: {
-          FrontEnd: [
-            'Angular 8',
-            'TypeScript',
-            'RxJS 6.5',
-            // 'NgRx 7',
-            // 'Angular Material design',
-            // 'Bootstrap 4',
-            'CSS3',
-            'HTML5'
-          ],
-          BackEnd: [
-            'Not Applicable'
-          ]
-        },
-        image: `https://via.placeholder.com/210x120`
-      },
-      {
         name: 'Streamly',
         description: 'Streamly is a Browser based music streaming app built with React Typescript, and Redux; and utilizes the Web Audio API to process audio from the server.',
         url: null,

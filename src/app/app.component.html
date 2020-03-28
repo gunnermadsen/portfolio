@@ -5,21 +5,21 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <button *ngIf="!state[3]" mat-button routerLink="/aboutme">
+      <button *ngIf="!state[3] || !state[4]" mat-button routerLink="/aboutme">
         <h2>Gunner Madsen</h2>
       </button>
       <div *ngIf="!state[1]">
-        <button mat-button routerLink="/projects">
-          <h4>Portfolio</h4>
+        <button mat-button routerLink="/">
+          Portfolio
         </button>
         <button mat-button routerLink="/aboutme">
-          <h4>About Me</h4>
+          About Me
         </button>
         <button mat-button routerLink="/articles">
-          <h4>Articles</h4>
+          Articles
         </button>
         <button mat-button routerLink="/contact">
-          <h4>Contact</h4>
+          Contact
         </button>
       </div>
     </mat-toolbar>
@@ -36,8 +36,8 @@
           <a mat-list-item routerLink="/contact">
             <span>Contact</span>
           </a>
-          <a mat-list-item routerLink="/projects">
-            <span>Portfolio</span>
+          <a mat-list-item routerLink="/">
+            <span>Projects</span>
           </a>
           <a mat-list-item routerLink="/articles">
             <span>Articles</span>

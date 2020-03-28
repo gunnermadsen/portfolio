@@ -1,14 +1,20 @@
-<div class="contact-container">
-    <div class="contact-wrapper">
-        <div class="wrapper-heading">
+<div class="contact__container">
+    <div class="contact__container-wrapper">
+        <div class="wrapper__heading">
             <h1>Lets get in touch</h1>
-            <h4>If you want to talk to me about a project, or just say hello, please drop me a message at <a href="mailto:gunner.madsen@outlook.com">gunner.madsen@outlook.com</a></h4>
+            <h4>If you want to talk to me about a project, or just say hello, please drop me a <a href="mailto:gunner.madsen@outlook.com">message</a></h4>
         </div>
-        <div class="wrapper-body">
+        <div class="wrapper__body">
             <h1>Connect with me</h1>
             <h4>Find me on social media!</h4>
-            <div class="social-buttons">
-                <button mat-raised-button [ngClass]="media.style" color="primary" (click)="navigate(media.link)" *ngFor="let media of socialMedia; index as i">{{ media.name }}<img [src]="media.image"/></button>
+            <div class="wrapper__body-buttons">
+                <button mat-raised-button 
+                    [ngClass]="media.style" 
+                    color="primary" 
+                    (click)="navigate(media.link)" 
+                    *ngFor="let media of socialMedia; index as i">
+                    <span class="social__button-title">{{ media.name }}</span><img [src]="media.image"/>
+                </button>
             </div>
         </div>
     </div>

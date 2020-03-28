@@ -5,6 +5,7 @@ import { AboutMeComponent } from './modules/home/components/about-me/about-me.co
 import { NotFoundComponent } from './modules/home/components/not-found/not-found.component';
 import { ArticlesComponent } from './modules/home/components/articles/articles.component';
 import { ContactComponent } from './modules/home/components/contact/contact.component';
+import { DashboardComponent } from './modules/dashboard/components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule),
+    component: DashboardComponent
   },
   // {
   //   path: '',

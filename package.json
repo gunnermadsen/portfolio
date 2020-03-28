@@ -15,7 +15,7 @@
     "postinstall": "npm run build:ssr",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "ssr": "npm run build:ssr && npm run serve:ssr",
-    "serve:ssr": "nodemon dist/server",
+    "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server && cp src/robots.txt dist/browser && cp src/sitemap.xml dist/browser",
     "build:client-and-server-bundles": "ng build --prod && ng run portfolio:server:production --bundleDependencies all"
   },

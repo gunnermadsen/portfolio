@@ -1,23 +1,21 @@
-<div class="container-fluid px-0">
-    <div class="row">
-        <div class="col-auto">
-            <h2 class="mb-1">{{ project.name }}</h2>
-        </div>
-        <div class="col-auto ml-auto">
-            <button mat-icon-button (click)="closeDialog()">
-                <mat-icon>close</mat-icon>
-            </button>
-        </div>
+<div class="dialog__container px-0">
+
+    <div class="dialog__container-heading">
+        <h2 class="mb-1">{{ project.name }}</h2>
+        <button mat-icon-button (click)="closeDialog()">
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
+
     <mat-divider></mat-divider>
-    <div class="row mb-3 mt-3">
-        <div class="col">
+
+    <div class="dialog__container-body">
+
+        <div class="body__description">
             {{ project.description }}
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col">
-            <h3 class="mb-1">Front End Technologies</h3>
+        <div class="body__item">
+            <h3 class="body__item-title">Front End Technologies</h3>
             <mat-divider class="mb-2"></mat-divider>
             <mat-chip-list>
                 <mat-chip color="accent" selected *ngFor="let technology of project.technologies.FrontEnd">
@@ -25,10 +23,8 @@
                 </mat-chip>
             </mat-chip-list>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col">
-            <h3 class="mb-1">Back End Technologies</h3>
+        <div class="body__item">
+            <h3 class="body__item-title">Back End Technologies</h3>
             <mat-divider class="mb-2"></mat-divider>
             <mat-chip-list>
                 <mat-chip color="primary" selected *ngFor="let technology of project.technologies.BackEnd">
@@ -36,17 +32,16 @@
                 </mat-chip>
             </mat-chip-list>
         </div>
+
     </div>
-    <div class="row mt-4">
-        <div class="col">
-            <mat-divider></mat-divider>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-auto ml-auto">
-            
-            <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live Site</button>
-            <button mat-raised-button class="ml-2" (click)="routeToExternalSite(project.githubUrl)" *ngIf="project.githubUrl != null">Github</button>
-        </div>
+
+    <mat-divider></mat-divider>
+    
+    <div class="dialog__container-actions">
+    
+        <button mat-raised-button color="primary" color="primary" (click)="routeToExternalSite(project.url)"
+            *ngIf="project.url != null">Live Site</button>
+        <button mat-raised-button color="warm" class="ml-2" (click)="routeToExternalSite(project.githubUrl)"
+            *ngIf="project.githubUrl != null">Github</button>
     </div>
 </div>

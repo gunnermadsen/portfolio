@@ -1,5 +1,5 @@
 import { Component, OnInit, isDevMode } from '@angular/core'
-import { MatDialogConfig, MatDialog } from '@angular/material'
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog'
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component'
 import { of, Observable } from 'rxjs'
 import { take, debounceTime, tap } from 'rxjs/operators'

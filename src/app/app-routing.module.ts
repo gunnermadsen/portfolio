@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { HomeComponent } from './modules/home/components/home/home.component';
-import { AboutMeComponent } from './modules/home/components/about-me/about-me.component';
-import { NotFoundComponent } from './modules/home/components/not-found/not-found.component';
-import { ArticlesComponent } from './modules/home/components/articles/articles.component';
-import { ContactComponent } from './modules/home/components/contact/contact.component';
-import { DashboardComponent } from './modules/dashboard/components/dashboard/dashboard.component';
+import { HomeComponent } from './modules/home/components/home/home.component'
+import { AboutMeComponent } from './modules/home/components/about-me/about-me.component'
+import { NotFoundComponent } from './modules/home/components/not-found/not-found.component'
+import { ArticlesComponent } from './modules/home/components/articles/articles.component'
+import { ContactComponent } from './modules/home/components/contact/contact.component'
+import { DashboardComponent } from './modules/admin/components/dashboard/dashboard.component'
+import { AdminPathGuard } from './core/guards/admin-guard/admin-guard.guard'
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule),
+    loadChildren: () => import('./modules/admin/admin.module').then(mod => mod.AdminModule),
+    canActivate: [AdminPathGuard],
     component: DashboardComponent
   },
   // {
@@ -38,7 +40,7 @@ const routes: Routes = [
     path: '**',
     component: NotFoundComponent
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

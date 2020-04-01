@@ -15,6 +15,7 @@
       </div> 
   
       <img mat-card-image class="project-card-img" [alt]="project.alternative" [src]="project.image">
+      <!-- <div imageHover [cardId]="i" [cardImgUrl]="project.image" class="project-card-img mat-card-image"></div> -->
       
       <mat-card-actions class="project-card-actions">
         <button mat-raised-button color="primary" (click)="routeToExternalSite(project.url)" *ngIf="project.url != null">Live</button>

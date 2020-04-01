@@ -12,6 +12,7 @@ import { NotFoundComponent } from './modules/home/components/not-found/not-found
 import { ArticlesComponent } from './modules/home/components/articles/articles.component'
 import { ContactComponent } from './modules/home/components/contact/contact.component'
 import { CardHoverDirective } from './modules/home/directives/card-hover/card-hover.directive'
+import { ImageHoverDirective } from './modules/home/directives/image-hover/image-hover.directive'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CardHoverDirective } from './modules/home/directives/card-hover/card-ho
     AboutMeComponent,
     ArticlesComponent,
     ContactComponent,
-    CardHoverDirective
+    CardHoverDirective,
+    ImageHoverDirective
     
   ],
   imports: [

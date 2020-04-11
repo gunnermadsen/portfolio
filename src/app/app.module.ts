@@ -13,12 +13,15 @@ import { ArticlesComponent } from './modules/home/components/articles/articles.c
 import { ContactComponent } from './modules/home/components/contact/contact.component'
 import { CardHoverDirective } from './modules/home/directives/card-hover/card-hover.directive'
 import { ImageHoverDirective } from './modules/home/directives/image-hover/image-hover.directive'
+import { LoginComponent } from './modules/home/components/login/login.component'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectDialogComponent,
+    LoginComponent,
     NotFoundComponent,
     AboutMeComponent,
     ArticlesComponent,
@@ -30,8 +33,9 @@ import { ImageHoverDirective } from './modules/home/directives/image-hover/image
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
   ],
   entryComponents: [ProjectDialogComponent],
   bootstrap: [AppComponent]

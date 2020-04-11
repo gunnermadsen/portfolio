@@ -15,6 +15,7 @@ export class AdminPathGuard implements CanActivate {
     console.log(location.hostname)
 
     if (location.hostname === 'admin.gunner-madsen.com') {
+
       return true
     }
 

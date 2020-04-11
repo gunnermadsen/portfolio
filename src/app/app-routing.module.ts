@@ -7,28 +7,41 @@ import { ArticlesComponent } from './modules/home/components/articles/articles.c
 import { ContactComponent } from './modules/home/components/contact/contact.component'
 import { DashboardComponent } from './modules/admin/components/dashboard/dashboard.component'
 import { AdminPathGuard } from './core/guards/admin-guard/admin-guard.guard'
+import { LoginComponent } from './modules/home/components/login/login.component'
+import { DomainGuard } from './core/guards/domain/domain.guard'
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [DomainGuard]
   },
   {
     path: 'aboutme',
-    component: AboutMeComponent
+    component: AboutMeComponent,
+    canActivate: [DomainGuard]
   },
   {
     path: 'articles',
-    component: ArticlesComponent
+    component: ArticlesComponent,
+    canActivate: [DomainGuard]
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    canActivate: [DomainGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [AdminPathGuard]
   },
   {
     path: 'dashboard',
     loadChildren: () => import('./modules/admin/admin.module').then(mod => mod.AdminModule),
-    canActivate: [AdminPathGuard],
+    canActivate: [
+      DomainGuard
+    ],
     component: DashboardComponent
   },
   // {
@@ -38,14 +51,17 @@ const routes: Routes = [
   // },
   {
     path: '**',
-    component: NotFoundComponent
+    component: NotFoundComponent,
+    canActivate: []
   }
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' })
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

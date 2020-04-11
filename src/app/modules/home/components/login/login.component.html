@@ -1,0 +1,35 @@
+<div class="login">
+  <mat-card>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="login__container">
+
+        <div class="login__container-title">
+          <h2>Login</h2>
+          <mat-divider></mat-divider>
+        </div>
+    
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input type="email" matInput formControlName="UserName">
+          <mat-error *ngIf="submitted && c.UserName.errors && c.UserName.invalid">
+            {{ getErrorMessage('UserName', 'required') }}</mat-error>
+          <mat-error *ngIf="submitted && c.UserName.errors && c.UserName.errors['invalidCharacters']">
+            {{ getErrorMessage('UserName', 'invalidCharacters') }}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="Password">
+          <mat-error *ngIf="submitted && c.Password.errors && c.Password.invalid">
+            {{ getErrorMessage('Password', 'required') }}</mat-error>
+          <mat-error *ngIf="submitted && c.Password.errors && c.Password.errors['invalidCharacters']">
+            {{ getErrorMessage('Password', 'invalidCharacters') }}</mat-error>
+        </mat-form-field>
+    
+        <div class="form-group">
+          <button type="submit" class="float-right" mat-flat-button color="primary">Login</button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

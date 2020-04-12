@@ -1,27 +1,29 @@
-import { Injectable, Inject } from '@angular/core'
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core'
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router'
 import { Observable } from 'rxjs'
-import { APP_BASE_HREF } from '@angular/common'
+import { APP_BASE_HREF, isPlatformBrowser } from '@angular/common'
 import { Router } from '@angular/router'
+import { platformBrowser } from '@angular/platform-browser'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminPathGuard implements CanActivate {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: object) {}
 
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log(location.hostname)
+  public canActivate(): boolean {
 
-    if (location.hostname === 'admin.gunner-madsen.com') {
-
-      return true
-    }
-
-    this.router.navigateByUrl('/notfound')
-    
-    return false
-  }
+    if (isPlatformBrowser(this.platformId)) {
+      if (location.hostname === 'admin.gunner-madsen.com') {
   
+        return true
+      }
+  
+      this.router.navigateByUrl('/notfound')
+      
+      return false
+    }
+  }
+   
 }

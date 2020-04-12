@@ -23,6 +23,11 @@
         margin-bottom: .2rem;
       }
     }
+
+    &-action {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 

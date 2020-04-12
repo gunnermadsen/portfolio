@@ -16,10 +16,13 @@ export class AppComponent {
   public isAdmin$: Observable<boolean>
 
   constructor(private _breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object) {
+    this.initializeApp()
+  }
 
+  private initializeApp() {
     if (isPlatformBrowser(this.platformId)) {
       this.isAdmin$ = of(this.document.location.hostname).pipe(
-        map((url: string) => url === 'admin.gunner-madsen.com' ? true : false)
+        map(url => url === 'admin.gunner-madsen.com' ? true : false)
       )
     }
 
@@ -31,11 +34,12 @@ export class AppComponent {
         '(max-width: 350px)'
       ])
       .subscribe(
-        (state: BreakpointState) => 
+        (state: BreakpointState) =>
           Object.values(state.breakpoints).map(
-            (breakpoint: boolean, index: number) => 
+            (breakpoint: boolean, index: number) =>
               this.state[index] = breakpoint
           )
       )
   }
+  
 }

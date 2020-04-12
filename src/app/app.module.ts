@@ -16,6 +16,7 @@ import { ImageHoverDirective } from './modules/home/directives/image-hover/image
 import { LoginComponent } from './modules/home/components/login/login.component'
 import { ReactiveFormsModule } from '@angular/forms'
 import { WINDOW_PROVIDER } from './core/providers/window/location.provider'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { WINDOW_PROVIDER } from './core/providers/window/location.provider'
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     MaterialModule,
   ],

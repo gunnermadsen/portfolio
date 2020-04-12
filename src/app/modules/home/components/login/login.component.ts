@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { AuthenticationService } from '../../../../core/http/authentication.http.service'
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar'
+import { take } from 'rxjs/operators'
 
 
 @Component({
@@ -13,16 +16,15 @@ export class LoginComponent implements OnInit {
   loading: boolean = false
   submitted: boolean = false
   returnUrl: string
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private authenticatorService: AuthenticationService, private snackbar: MatSnackBar) {}
 
   ngOnInit() {
 
     this.loginForm = this.formBuilder.group({
-      UserName: ['madgunner', Validators.compose([ Validators.required ])],
-      Password: ['Megatron1!', Validators.compose([ Validators.required ])]
+      UserName: ['', Validators.compose([ Validators.required ])],
+      Password: ['', Validators.compose([ Validators.required ])]
     })
 
-    //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard'
   }
 
   public get f() {
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
       Password: this.f.Password
     }
 
+    this.authenticatorService.authenticateAccount(user).pipe(take(1)).subscribe()
 
   }
 

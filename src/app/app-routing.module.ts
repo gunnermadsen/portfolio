@@ -34,15 +34,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    // canActivate: [AdminGuard]
+    canActivate: [AdminGuard]
   },
   {
     path: 'dashboard',
     loadChildren: () => import('./modules/admin/admin.module').then(mod => mod.AdminModule),
-    canActivate: [
-      AdminGuard
-    ],
-    component: DashboardComponent
+    canActivate: [AdminGuard]
   },
   // {
   //   path: '',

@@ -15,9 +15,19 @@ export function app() {
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
-  server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule,
-  }));
+  server.engine('html', (_, options: any, callback) => {
+    let engine = ngExpressEngine({
+      bootstrap: AppServerModule,
+      providers: [
+        {
+          provide: 'host',
+          useFactory: () => options.req.get('host')
+        }
+      ]
+    })
+
+    engine(_, options, callback)
+  });
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -31,6 +41,7 @@ export function app() {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
+    console.log(req.hostname)
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
   });
 

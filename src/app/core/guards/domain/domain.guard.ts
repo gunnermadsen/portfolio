@@ -1,35 +1,27 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, Injector } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class DomainGuard implements CanActivate {
 
-  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(private router: Router, @Inject(DOCUMENT) private document: Document, private injector: Injector, @Inject(PLATFORM_ID) private platformId: object) {}
 
   public canActivate(): boolean {
 
-    console.log(location.hostname)
-
     if (isPlatformBrowser(this.platformId)) {
-      if (location.hostname === 'admin.gunner-madsen.com') {
 
-        const account = localStorage.getItem('Account')
+      console.log(this.document.location.hostname)
 
-        if (account) {
-          return true
-        }
-        else {
-          this.router.navigateByUrl('/login')
-          return false
-        }
-
+      if (this.document.location.hostname === 'admin.gunner-madsen.com') {
+        this.router.navigateByUrl('/notfound')
+        return false
       }
 
-      return true
     }
+    return true
 
   }
   

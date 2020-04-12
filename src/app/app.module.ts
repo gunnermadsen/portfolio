@@ -15,6 +15,7 @@ import { CardHoverDirective } from './modules/home/directives/card-hover/card-ho
 import { ImageHoverDirective } from './modules/home/directives/image-hover/image-hover.directive'
 import { LoginComponent } from './modules/home/components/login/login.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { WINDOW_PROVIDER } from './core/providers/window/location.provider'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,9 @@ import { ReactiveFormsModule } from '@angular/forms'
     ReactiveFormsModule,
     AppRoutingModule,
     MaterialModule,
+  ],
+  providers: [
+    WINDOW_PROVIDER
   ],
   entryComponents: [ProjectDialogComponent],
   bootstrap: [AppComponent]

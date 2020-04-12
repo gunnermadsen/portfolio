@@ -6,9 +6,9 @@ import { NotFoundComponent } from './modules/home/components/not-found/not-found
 import { ArticlesComponent } from './modules/home/components/articles/articles.component'
 import { ContactComponent } from './modules/home/components/contact/contact.component'
 import { DashboardComponent } from './modules/admin/components/dashboard/dashboard.component'
-import { AdminPathGuard } from './core/guards/admin-guard/admin-guard.guard'
 import { LoginComponent } from './modules/home/components/login/login.component'
 import { DomainGuard } from './core/guards/domain/domain.guard'
+import { AdminGuard } from './core/guards/admin/admin.guard'
 
 const routes: Routes = [
   {
@@ -34,13 +34,13 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AdminPathGuard]
+    canActivate: [AdminGuard]
   },
   {
     path: 'dashboard',
     loadChildren: () => import('./modules/admin/admin.module').then(mod => mod.AdminModule),
     canActivate: [
-      DomainGuard
+      AdminGuard
     ],
     component: DashboardComponent
   },

@@ -34,7 +34,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AdminGuard]
+    // canActivate: [AdminGuard]
   },
   {
     path: 'dashboard',

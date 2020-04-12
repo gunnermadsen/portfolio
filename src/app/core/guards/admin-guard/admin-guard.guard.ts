@@ -15,6 +15,9 @@ export class AdminPathGuard implements CanActivate {
   public canActivate(): boolean {
 
     if (isPlatformBrowser(this.platformId)) {
+
+      console.log(location.hostname)
+      
       if (location.hostname === 'admin.gunner-madsen.com') {
   
         return true

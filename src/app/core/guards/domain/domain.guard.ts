@@ -11,6 +11,8 @@ export class DomainGuard implements CanActivate {
 
   public canActivate(): boolean {
 
+    console.log(location.hostname)
+
     if (isPlatformBrowser(this.platformId)) {
       if (location.hostname === 'admin.gunner-madsen.com') {
 

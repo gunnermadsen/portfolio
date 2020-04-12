@@ -1,4 +1,50 @@
   <div class="nav-container" [class.is-mobile]="!state[0]">
+    <div *ngIf="isAdmin$ | async; then admin; else user"></div>
+  </div>
+
+
+  <ng-template #admin>
+    <mat-toolbar color="primary" class="nav-toolbar mat-elevation-z3">
+      <!-- <div *ngIf="state[1]">
+        <button mat-icon-button aria-label="View the navigation menu" (click)="navbar.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div> -->
+      <button *ngIf="!state[3] || !state[4]" mat-button routerLink="/login">
+        <h2>Gunner Madsen Admin Portal</h2>
+      </button>
+    </mat-toolbar>
+    
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="!state[0] ? 56 : 0">
+      <!-- <mat-sidenav #navbar [fixedInViewport]="!state[0]" fixedTopGap="56">
+        <mat-nav-list (click)="navbar.toggle()">
+          <a mat-list-item>
+            <mat-icon>close</mat-icon>
+          </a>
+          <a mat-list-item routerLink="/aboutme">
+            <span>About Me</span>
+          </a>
+          <a mat-list-item routerLink="/contact">
+            <span>Contact</span>
+          </a>
+          <a mat-list-item routerLink="/">
+            <span>Projects</span>
+          </a>
+          <a mat-list-item routerLink="/articles">
+            <span>Articles</span>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav> -->
+    
+      <div class="portfolio-container">
+        <router-outlet></router-outlet>
+      </div>
+    
+    </mat-sidenav-container>
+  </ng-template>
+
+
+  <ng-template #user>
     <mat-toolbar color="primary" class="nav-toolbar mat-elevation-z3">
       <div *ngIf="state[1]">
         <button mat-icon-button aria-label="View the navigation menu" (click)="navbar.toggle()">
@@ -23,7 +69,7 @@
         </button>
       </div>
     </mat-toolbar>
-  
+    
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="!state[0] ? 56 : 0">
       <mat-sidenav #navbar [fixedInViewport]="!state[0]" fixedTopGap="56">
         <mat-nav-list (click)="navbar.toggle()">
@@ -44,11 +90,12 @@
           </a>
         </mat-nav-list>
       </mat-sidenav>
-
+    
       <div class="portfolio-container">
         <router-outlet></router-outlet>
       </div>
-
+    
     </mat-sidenav-container>
-  </div>
+  </ng-template>
+  
   

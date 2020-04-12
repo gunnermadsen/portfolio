@@ -1,5 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, Inject, PLATFORM_ID } from '@angular/core'
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
+import { Observable, of } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { DOCUMENT, isPlatformBrowser } from '@angular/common'
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,15 @@ export class AppComponent {
 
   public state: boolean[] = [ false, false, false, false ]
 
-  constructor(private _breakpointObserver: BreakpointObserver) {
+  public isAdmin$: Observable<boolean>
+
+  constructor(private _breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object) {
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.isAdmin$ = of(this.document.location.hostname).pipe(
+        map((url: string) => url === 'admin.gunner-madsen.com' ? true : false)
+      )
+    }
 
     this._breakpointObserver
       .observe([

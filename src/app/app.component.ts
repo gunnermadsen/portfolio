@@ -3,6 +3,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
 import { Observable, of } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { DOCUMENT, isPlatformBrowser } from '@angular/common'
+import { AuthenticationService } from './core/http/authentication.http.service'
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,9 @@ export class AppComponent {
   public state: boolean[] = [ false, false, false, false ]
 
   public isAdmin$: Observable<boolean>
+  public isAuth$: Observable<boolean>
 
-  constructor(private _breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object) {
+  constructor(private _breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object, private authService: AuthenticationService) {
     this.initializeApp()
   }
 
@@ -24,6 +26,8 @@ export class AppComponent {
       this.isAdmin$ = of(this.document.location.hostname).pipe(
         map(url => url === 'admin.gunner-madsen.com' ? true : false)
       )
+
+      this.isAuth$ = this.authService.isAuthenticated$
     }
 
     this._breakpointObserver

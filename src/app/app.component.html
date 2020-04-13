@@ -11,12 +11,12 @@
         </button>
       </div>
       <button *ngIf="!state[3] || !state[4]" mat-button routerLink="/login">
-        <h2>Admin Portal</h2>
+        <h2>Admin Workbench</h2>
       </button>
     </mat-toolbar>
     
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="!state[0] ? 56 : 0">
-      <!-- <mat-sidenav #navbar [fixedInViewport]="!state[0]" fixedTopGap="56">
+      <mat-sidenav #navbar [fixedInViewport]="!state[0]" fixedTopGap="56">
         <mat-nav-list (click)="navbar.toggle()">
           <a mat-list-item>
             <mat-icon>close</mat-icon>
@@ -34,7 +34,7 @@
             <span>Articles</span>
           </a>
         </mat-nav-list>
-      </mat-sidenav> -->
+      </mat-sidenav>
     
       <div class="portfolio-container">
         <router-outlet></router-outlet>

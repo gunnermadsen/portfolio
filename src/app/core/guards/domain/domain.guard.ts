@@ -16,7 +16,7 @@ export class DomainGuard implements CanActivate {
       console.log(this.document.location.hostname)
 
       if (this.document.location.hostname === 'admin.gunner-madsen.com') {
-        this.router.navigateByUrl('/notfound')
+        this.router.navigateByUrl('/login')
         return false
       }
 

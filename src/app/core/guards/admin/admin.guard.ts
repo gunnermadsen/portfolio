@@ -1,13 +1,12 @@
-import { Injectable, Inject, PLATFORM_ID, Injector } from '@angular/core'
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router'
-import { Observable } from 'rxjs'
-import { APP_BASE_HREF, isPlatformBrowser, isPlatformServer, DOCUMENT } from '@angular/common'
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core'
+import { CanActivate } from '@angular/router'
+import { isPlatformBrowser, DOCUMENT } from '@angular/common'
 import { Router } from '@angular/router'
 
 @Injectable({ providedIn: 'root' })
 export class AdminGuard implements CanActivate {
 
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object, private injector: Injector) {}
+  constructor(private router: Router, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object) {}
 
   public canActivate(): boolean {
 

@@ -1,8 +1,8 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core'
+import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core'
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
 import { Observable, of } from 'rxjs'
 import { map } from 'rxjs/operators'
-import { DOCUMENT, isPlatformBrowser } from '@angular/common'
+import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common'
 import { AuthenticationService } from './core/http/authentication.http.service'
 
 @Component({
@@ -10,25 +10,26 @@ import { AuthenticationService } from './core/http/authentication.http.service'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public state: boolean[] = [ false, false, false, false ]
 
   public isAdmin$: Observable<boolean>
   public isAuth$: Observable<boolean>
 
-  constructor(private _breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object, private authService: AuthenticationService) {
-    this.initializeApp()
-  }
+  constructor(private _breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object, private authService: AuthenticationService) {}
 
-  private initializeApp() {
+  public ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.isAdmin$ = of(this.document.location.hostname).pipe(
         map(url => url === 'admin.gunner-madsen.com' ? true : false)
       )
 
       this.isAuth$ = this.authService.isAuthenticated$
+
+      this.isAdmin$.subscribe(value => console.log(value))
     }
+    
 
     this._breakpointObserver
       .observe([
@@ -44,6 +45,10 @@ export class AppComponent {
               this.state[index] = breakpoint
           )
       )
+  }
+
+  public isServer(): boolean {
+    return isPlatformServer(this.platformId)
   }
   
 }

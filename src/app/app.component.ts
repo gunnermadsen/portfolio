@@ -22,23 +22,22 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.isAdmin$ = of(this.document.location.hostname).pipe(
-        map(url => url === 'admin.gunner-madsen.com' ? true : false)
+        map(url => url === 'admin.gunner-madsen.com')
       )
 
       this.isAuth$ = this.authService.isAuthenticated$
 
       this.isAdmin$.subscribe(value => console.log(value))
     }
-    
 
-    this._breakpointObserver
-      .observe([
-        '(max-width: 1200px)',
-        '(max-width: 900px)',
-        '(max-width: 600px)',
-        '(max-width: 350px)'
-      ])
-      .subscribe(
+    const breakpoints = [
+      '(max-width: 1200px)',
+      '(max-width: 900px)',
+      '(max-width: 600px)',
+      '(max-width: 350px)'
+    ]
+    
+    this._breakpointObserver.observe(breakpoints).subscribe(
         (state: BreakpointState) =>
           Object.values(state.breakpoints).map(
             (breakpoint: boolean, index: number) =>

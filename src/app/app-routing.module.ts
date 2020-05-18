@@ -49,7 +49,7 @@ const routes: Routes = [
   {
     path: '**',
     component: NotFoundComponent,
-    canActivate: []
+    canActivate: [DomainGuard]
   }
 ]
 

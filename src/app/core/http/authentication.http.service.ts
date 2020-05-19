@@ -15,18 +15,13 @@ interface IUser {
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
-    private snackbarConfig: MatSnackBarConfig
-
     private _isAuthenticated$ = new Subject<boolean>()
 
     public get isAuthenticated$(): Observable<boolean> {
         return this._isAuthenticated$.asObservable()
     }
     
-    constructor(private http: HttpClient, private snackbar: MatSnackBar, private router: Router, @Inject(PLATFORM_ID) private platformId: object) {
-        this.snackbarConfig = new MatSnackBarConfig()
-        this.snackbarConfig.duration = 5000
-    }
+    constructor(private http: HttpClient, private snackbar: MatSnackBar, private router: Router, @Inject(PLATFORM_ID) private platformId: object) {}
 
     public authenticateAccount(user: IUser): Observable<any> {
         return this.http.post(`${environment.apiUrl}/api/users/login`, user).pipe(
@@ -53,7 +48,7 @@ export class AuthenticationService {
 
     private displaySnackbarMessage(message: string) {
 
-        this.snackbar.open(message, 'close', this.snackbarConfig)
+        this.snackbar.open(message, 'close')
 
     }
 }

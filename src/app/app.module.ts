@@ -16,6 +16,7 @@ import { ImageHoverDirective } from './modules/home/directives/image-hover/image
 import { LoginComponent } from './modules/home/components/login/login.component'
 import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -40,6 +41,12 @@ import { HttpClientModule } from '@angular/common/http'
     MaterialModule,
   ],
   entryComponents: [ProjectDialogComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide:  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: { duration: 5000 }
+    }
+  ]
 })
 export class AppModule { }

@@ -26,8 +26,6 @@ export class AppComponent implements OnInit {
       )
 
       this.isAuth$ = this.authService.isAuthenticated$
-
-      this.isAdmin$.subscribe(value => console.log(value))
     }
 
     const breakpoints = [

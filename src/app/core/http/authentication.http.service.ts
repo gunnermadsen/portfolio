@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError, BehaviorSubject, Subject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { map, catchError, tap } from 'rxjs/operators';
 import { MatSnackBarConfig, MatSnackBar, MatSnackBarContainer } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 interface IUser {
     UserName: string, 
@@ -22,7 +23,7 @@ export class AuthenticationService {
         return this._isAuthenticated$.asObservable()
     }
     
-    constructor(private http: HttpClient, private snackbar: MatSnackBar, private router: Router) {
+    constructor(private http: HttpClient, private snackbar: MatSnackBar, private router: Router, @Inject(PLATFORM_ID) private platformId: object) {
         this.snackbarConfig = new MatSnackBarConfig()
         this.snackbarConfig.duration = 5000
     }
@@ -30,9 +31,11 @@ export class AuthenticationService {
     public authenticateAccount(user: IUser): Observable<any> {
         return this.http.post(`${environment.apiUrl}/api/users/login`, user).pipe(
             tap(response => {
-                localStorage.setItem('Account', JSON.stringify(response))
-                this.router.navigateByUrl('/dashboard/main')
-                this._isAuthenticated$.next(true)
+                if (isPlatformBrowser(this.platformId)) {
+                    localStorage.setItem('Account', JSON.stringify(response))
+                    this.router.navigateByUrl('/dashboard/main')
+                    this._isAuthenticated$.next(true)
+                }
             }),
             catchError(response => {
                 this.displaySnackbarMessage(response.error.message)

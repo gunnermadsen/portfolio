@@ -7,7 +7,7 @@ import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 @Injectable({ providedIn: 'root' })
 export class DomainGuard implements CanActivate {
 
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document, private injector: Injector, @Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(private router: Router, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: object) {}
 
   public canActivate(): boolean {
 

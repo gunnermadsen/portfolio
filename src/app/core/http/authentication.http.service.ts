@@ -1,9 +1,9 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, throwError, BehaviorSubject, Subject } from 'rxjs';
+import { Observable, throwError, Subject } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { map, catchError, tap } from 'rxjs/operators';
-import { MatSnackBarConfig, MatSnackBar, MatSnackBarContainer } from '@angular/material/snack-bar';
+import { catchError, tap } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
